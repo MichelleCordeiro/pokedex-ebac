@@ -1,27 +1,94 @@
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.mainflip {
+  -webkit-transition: 1s;
+  -webkit-transform-style: preserve-3d;
+  -ms-transition: 1s;
+  -ms-transform-style: preserve-3d;
+  -moz-transition: 1s;
+  -moz-transform-style: preserve-3d;
+  -moz-transform: perspective(1000px);
+  transition: 1s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.frontside {
+  position: relative;
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.backside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  z-index: 999;
+}
+
+.frontside,
+.backside {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transition: 1s;
+  -moz-transform-style: preserve-3d;
+  -o-transition: 1s;
+  -o-transform-style: preserve-3d;
+  -ms-transition: 1s;
+  -ms-transform-style: preserve-3d;
+  transition: 1s;
+  transform-style: preserve-3d;
+}
+
 .card {
   margin-top: 3%;
+}
+
+.card:hover {
+  box-shadow: 0 12px 20px -6px rgb(24 39 75 / 12%), 0 12px 40px -4px rgb(24 39 75 / 10%);
 }
 
 .card img {
   margin-top: 5%;
   position: relative;
-  z-index: 5;
+  z-index: 2;
 }
 
 .card:after {
-  background-color: var(--white);
+  background-color: white;
   position: absolute;
-  display: block;
+  border-radius: 50%;
   align-self: center;
   content: '';
   width: 115px;
   height: 110px;
-  margin-top: 5%;
-  border-radius: 50%;
-  z-index: 1;
-  box-shadow: 0 12px 20px -6px rgb(24 39 75 / 12%), 0 12px 40px -4px rgb(24 39 75 / 10%);
-}
-
-.card:hover {
-  box-shadow: 0 12px 20px -6px rgb(24 39 75 / 12%), 0 12px 40px -4px rgb(24 39 75 / 10%);
+  margin-top: 3%;
 }

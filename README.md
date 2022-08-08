@@ -7,7 +7,11 @@
 <h1 align="center">Pokedex </h1>
 
 Workshop de três dias sobre uso de APIs da EBAC, com a dev [Nathally Souza](https://www.linkedin.com/in/nathsouza/), onde foi cronstruida a Pokedex utilizando a API educacional [PokéAPI](https://pokeapi.co/).
-<br><br>
+<br>
+
+<p align="center">
+  <img src=video.gif alt="EBAC" tittle="Gif" width="500">
+</p>
 
 <!-- Ícones das linguagens -->
 <h3> 💻 Technologies & Tool </h3>
@@ -29,15 +33,19 @@ Neste workshop em Javascript o foco foi:
 - classList
 - bootstrap
 
+<br>
 <h2> 🚀 Adicionais: </h2>
 
-- customização nos backgraounds dos cards segundo o type do pokemon no JS
+- customização nos backgraounds dos cards segundo o tipo do pokemon no JS
 - customização com CSS
+- card flip com hover consumindo mais infomações da API
 
+<br>
 <h2> 🔮 Implementações futuras: </h2>
 
-- [ ] card flip com hover
+- [ ] alterar flip card para apenas virar apenas a imagem e não o card todo
 - [ ] popup clicando nos botões
+- [ ] melhoria: flip card só funciona, pois carregar todos os 150 pokemons
 
 <!-- Dev Info -->
 <br>

@@ -50,7 +50,8 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=150')
 
       const pokemonImage = await fetch('https://pokeapi.co/api/v2/pokemon-form/' + element.name)
       const img = await pokemonImage.json()
-      box.querySelector('#pokemon-img').src = img.sprites.front_default
+      box.querySelector('#pokemon-img-front').src = img.sprites.front_default
+      box.querySelector('#pokemon-img-back').src = img.sprites.back_default
 
       const pokemonType = await fetch('https://pokeapi.co/api/v2/pokemon-form/' + element.name)
       const pkType = await pokemonType.json()
@@ -59,9 +60,15 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=150')
       boxType.innerHTML = pkType.types[0].type.name
       boxType.style.textTransform = 'capitalize'
 
-      box.querySelector('.card').style.backgroundColor = colorBg[pkType.types[0].type.name]
+      box.querySelector('.card-front').style.backgroundColor = colorBg[pkType.types[0].type.name]
+      box.querySelector('.card-back').style.backgroundColor = colorBg[pkType.types[0].type.name]
+
+      const pokemonInfos = await fetch('https://pokeapi.co/api/v2/pokemon-species/' + element.name)
+      const infos = await pokemonInfos.json()
+      box.querySelector('#pokemon-happiness').innerHTML = 'Happiness: ' + infos.base_happiness
+      box.querySelector('#pokemon-capture').innerHTML = 'Capture: ' + infos.capture_rate
 
       page.innerHTML += box.outerHTML
     }
-    console.log('https://pokeapi.co/api/v2/pokemon-form/' + data.results[26].name)
+    //console.log('https://pokeapi.co/api/v2/pokemon-form/' + data.results[26].name)
   })
